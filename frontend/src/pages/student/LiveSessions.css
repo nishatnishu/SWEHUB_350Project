@@ -1,0 +1,594 @@
+.live-sessions {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.sessions-header {
+  margin-bottom: 30px;
+}
+
+.back-dashboard {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.sessions-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #667eea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.sessions-header p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Batch Selector */
+.batch-selector {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.batch-selector label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.batch-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.batch-btn {
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.batch-btn:hover,
+.batch-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: transparent;
+}
+
+/* Live Session Card */
+.live-session-card {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+  border: 2px solid #ef4444;
+  border-radius: 24px;
+  padding: 25px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ef4444;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.live-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.live-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.live-info p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+
+.join-live-btn {
+  padding: 14px 32px;
+  background: #ef4444;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.join-live-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+}
+
+/* Schedule Table */
+.schedule-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+
+.schedule-section h2 {
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.schedule-table-container {
+  overflow-x: auto;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: top;
+}
+
+.schedule-table th {
+  background: rgba(102, 126, 234, 0.2);
+  font-weight: 600;
+  text-align: center;
+}
+
+.time-slot {
+  font-weight: 600;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.class-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.class-code {
+  font-weight: 700;
+  color: #667eea;
+}
+
+.class-name {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.instructor {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ongoing-cell {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+.completed-cell {
+  background: rgba(72, 187, 120, 0.05);
+}
+
+.no-class {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+
+.badge-ongoing,
+.badge-completed,
+.badge-upcoming,
+.badge-scheduled {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.badge-ongoing { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+.badge-completed { background: rgba(72, 187, 120, 0.2); color: #48bb78; }
+.badge-upcoming { background: rgba(237, 137, 54, 0.2); color: #ed8936; }
+.badge-scheduled { background: rgba(102, 126, 234, 0.2); color: #a9b8ff; }
+
+.join-small {
+  margin-top: 5px;
+  padding: 3px 8px;
+  background: #ef4444;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+/* Bottom Section */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.todays-sessions,
+.quick-actions {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 25px;
+}
+
+.todays-sessions h2,
+.quick-actions h2 {
+  margin-bottom: 20px;
+  color: #f093fb;
+}
+
+.today-session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.session-time {
+  font-size: 12px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.session-details {
+  flex: 1;
+}
+
+.session-details strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.session-details span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.join-btn-small,
+.attendance-btn-small {
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.join-btn-small {
+  background: #ef4444;
+  border: none;
+  color: white;
+}
+
+.attendance-btn-small {
+  background: rgba(72, 187, 120, 0.2);
+  border: 1px solid #48bb78;
+  color: #48bb78;
+}
+
+.quick-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.quick-btn {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.quick-btn:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Recordings Section */
+.recordings-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 25px;
+}
+
+.recordings-section h2 {
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.recordings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recording-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.recording-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.recording-icon {
+  font-size: 32px;
+}
+
+.recording-info {
+  flex: 1;
+}
+
+.recording-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.recording-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.watch-btn {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.watch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.no-sessions,
+.no-recordings {
+  text-align: center;
+  padding: 40px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content-small {
+  background: #1a1a2e;
+  border-radius: 24px;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-content-small h2 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.modal-content-small p {
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal-buttons button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+
+
+
+/* Add to existing LiveSessions.css */
+
+.class-room {
+  font-size: 10px;
+  color: #f093fb;
+  margin-top: 2px;
+}
+
+.badge-ongoing {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border-radius: 12px;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.badge-completed {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(72, 187, 120, 0.2);
+  color: #48bb78;
+  border-radius: 12px;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.badge-upcoming {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(237, 137, 54, 0.2);
+  color: #ed8936;
+  border-radius: 12px;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.badge-scheduled {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(102, 126, 234, 0.2);
+  color: #a9b8ff;
+  border-radius: 12px;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.attendance-btn-small {
+  padding: 5px 12px;
+  background: rgba(72, 187, 120, 0.2);
+  border: 1px solid #48bb78;
+  border-radius: 6px;
+  color: #48bb78;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.attendance-btn-small:hover {
+  background: rgba(72, 187, 120, 0.4);
+  transform: translateY(-1px);
+}
+
+.modal-content-small {
+  background: #1a1a2e;
+  border-radius: 24px;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-content-small h2 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.modal-content-small p {
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal-buttons button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-buttons button:first-child {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+@media (max-width: 1024px) {
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .live-sessions { padding: 20px; }
+  .sessions-header h1 { font-size: 24px; }
+  .live-content { flex-direction: column; text-align: center; }
+  .schedule-table { font-size: 10px; }
+  .schedule-table th, .schedule-table td { padding: 6px 3px; }
+  .class-name, .instructor { display: none; }
+  .quick-buttons { grid-template-columns: 1fr; }
+}
